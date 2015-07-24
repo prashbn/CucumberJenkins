@@ -1,0 +1,17 @@
+@Login
+Feature: The user should be able to login screen must request for a username and password
+
+  @TC002
+  Scenario: The sum of a list of numbers should be calculated [90m# src/test/resources/login.feature:17[0m
+    [32mGiven [0m[32ma list of numbers[0m                                   [90m# StepDefn.a_list_of_numbers(Integer>)[0m
+    [32mWhen [0m[32mI summarize them[0m                                     [90m# StepDefn.i_summarize_them()[0m
+    [31mThen [0m[31mshould I get [0m[31m[1m4770[0m                                    [90m# StepDefn.should_I_get(int)[0m
+      [31mjava.lang.AssertionError: expected:<4771> but was:<4770>
+      	at org.junit.Assert.fail(Assert.java:88)
+      	at org.junit.Assert.failNotEquals(Assert.java:743)
+      	at org.junit.Assert.assertEquals(Assert.java:118)
+      	at org.junit.Assert.assertEquals(Assert.java:555)
+      	at org.junit.Assert.assertEquals(Assert.java:542)
+      	at StepDefn.should_I_get(StepDefn.java:30)
+      	at ✽.Then should I get 4770(src/test/resources/login.feature:23)
+      [0m
