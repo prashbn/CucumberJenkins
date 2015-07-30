@@ -1,9 +1,9 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/login.feature");
 formatter.feature({
   "line": 2,
-  "name": "The user should be able to login screen must request for a username and password",
+  "name": "The user should be able to login  and the screen must request for a username and password",
   "description": "",
-  "id": "the-user-should-be-able-to-login-screen-must-request-for-a-username-and-password",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password",
   "keyword": "Feature",
   "tags": [
     {
@@ -12,81 +12,230 @@ formatter.feature({
     }
   ]
 });
-formatter.scenario({
-  "line": 17,
-  "name": "The sum of a list of numbers should be calculated",
+formatter.scenarioOutline({
+  "line": 6,
+  "name": "The user should be able to login with a valid",
   "description": "",
-  "id": "the-user-should-be-able-to-login-screen-must-request-for-a-username-and-password;the-sum-of-a-list-of-numbers-should-be-calculated",
-  "type": "scenario",
-  "keyword": "Scenario",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 15,
-      "name": "@TC002"
+      "line": 5,
+      "name": "@Regression"
     }
   ]
 });
 formatter.step({
-  "line": 18,
-  "name": "a list of numbers",
+  "line": 7,
+  "name": "I open the page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 8,
+  "name": "I click on Login after keyin \u003cUserName\u003e and \u003cPassword\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 9,
+  "name": "I should be redirected to the landing page",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 12,
+  "name": "",
+  "description": "",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;",
   "rows": [
     {
       "cells": [
-        "18"
+        "TestCaseID",
+        "",
+        "UserName",
+        "",
+        "Password"
       ],
-      "line": 19
+      "line": 13,
+      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;1"
     },
     {
       "cells": [
-        "42"
+        "TC001",
+        "",
+        "sample",
+        "",
+        "sample123"
       ],
-      "line": 20
-    },
-    {
-      "cells": [
-        "4711"
-      ],
-      "line": 21
+      "line": 14,
+      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;2"
     }
   ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 14,
+  "name": "The user should be able to login with a valid",
+  "description": "",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 1,
+      "name": "@Login"
+    },
+    {
+      "line": 5,
+      "name": "@Regression"
+    }
+  ]
+});
+formatter.step({
+  "line": 7,
+  "name": "I open the page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 8,
+  "name": "I click on Login after keyin sample and sample123",
+  "matchedColumns": [
+    2,
+    4
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 9,
+  "name": "I should be redirected to the landing page",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenarioOutline({
+  "line": 20,
+  "name": "The user should not be able to login with a invalid login details",
+  "description": "",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 19,
+      "name": "@Regression"
+    },
+    {
+      "line": 19,
+      "name": "@Smoke"
+    }
+  ]
+});
+formatter.step({
+  "line": 21,
+  "name": "I open the page",
   "keyword": "Given "
 });
 formatter.step({
   "line": 22,
-  "name": "I summarize them",
+  "name": "I click on Login after keyin incorrect \u003cUserName\u003e and \u003cPassword\u003e",
   "keyword": "When "
 });
 formatter.step({
   "line": 23,
-  "name": "should I get 4770",
+  "name": "I should be displayed with an error message",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "StepDefn.a_list_of_numbers(Integer\u003e)"
-});
-formatter.result({
-  "duration": 107030385,
-  "status": "passed"
-});
-formatter.match({
-  "location": "StepDefn.i_summarize_them()"
-});
-formatter.result({
-  "duration": 61593,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
+formatter.examples({
+  "line": 25,
+  "name": "",
+  "description": "",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;",
+  "rows": [
     {
-      "val": "4770",
-      "offset": 13
+      "cells": [
+        "TestCaseID",
+        "",
+        "UserName",
+        "",
+        "Password"
+      ],
+      "line": 26,
+      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;;1"
+    },
+    {
+      "cells": [
+        "TC002",
+        "",
+        "sample",
+        "",
+        "sample12"
+      ],
+      "line": 27,
+      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;;2"
     }
   ],
-  "location": "StepDefn.should_I_get(int)"
+  "keyword": "Examples"
 });
+formatter.scenario({
+  "line": 27,
+  "name": "The user should not be able to login with a invalid login details",
+  "description": "",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 1,
+      "name": "@Login"
+    },
+    {
+      "line": 19,
+      "name": "@Smoke"
+    },
+    {
+      "line": 19,
+      "name": "@Regression"
+    }
+  ]
+});
+formatter.step({
+  "line": 21,
+  "name": "I open the page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 22,
+  "name": "I click on Login after keyin incorrect sample and sample12",
+  "matchedColumns": [
+    2,
+    4
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 23,
+  "name": "I should be displayed with an error message",
+  "keyword": "Then "
+});
+formatter.match({});
 formatter.result({
-  "duration": 2849000,
-  "error_message": "java.lang.AssertionError: expected:\u003c4771\u003e but was:\u003c4770\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\n\tat org.junit.Assert.assertEquals(Assert.java:118)\n\tat org.junit.Assert.assertEquals(Assert.java:555)\n\tat org.junit.Assert.assertEquals(Assert.java:542)\n\tat StepDefn.should_I_get(StepDefn.java:30)\n\tat ✽.Then should I get 4770(src/test/resources/login.feature:23)\n",
-  "status": "failed"
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
 });
 });

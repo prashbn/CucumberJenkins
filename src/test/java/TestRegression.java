@@ -9,7 +9,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 features ={"src/test/resources/login.feature"},
 plugin = {"html:target/cucumber-html-report", "pretty:target/cucumber-json-report.json"},
-strict = true
+strict = true,
+glue={"au.com.MavenCucumberJenkins.src.test.java.TestRegression.java.stepDenfn2.java"}
 )
 public class TestRegression {
 

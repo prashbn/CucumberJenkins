@@ -1,17 +1,30 @@
 @Login
-Feature: The user should be able to login screen must request for a username and password
+Feature: The user should be able to login  and the screen must request for a username and password
 
-  @TC002
-  Scenario: The sum of a list of numbers should be calculated [90m# src/test/resources/login.feature:17[0m
-    [32mGiven [0m[32ma list of numbers[0m                                   [90m# StepDefn.a_list_of_numbers(Integer>)[0m
-    [32mWhen [0m[32mI summarize them[0m                                     [90m# StepDefn.i_summarize_them()[0m
-    [31mThen [0m[31mshould I get [0m[31m[1m4770[0m                                    [90m# StepDefn.should_I_get(int)[0m
-      [31mjava.lang.AssertionError: expected:<4771> but was:<4770>
-      	at org.junit.Assert.fail(Assert.java:88)
-      	at org.junit.Assert.failNotEquals(Assert.java:743)
-      	at org.junit.Assert.assertEquals(Assert.java:118)
-      	at org.junit.Assert.assertEquals(Assert.java:555)
-      	at org.junit.Assert.assertEquals(Assert.java:542)
-      	at StepDefn.should_I_get(StepDefn.java:30)
-      	at ✽.Then should I get 4770(src/test/resources/login.feature:23)
-      [0m
+  @Regression
+  Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:6[0m
+    [36mGiven [0m[36mI open the page[0m
+    [36mWhen [0m[36mI click on Login after keyin <UserName> and <Password>[0m
+    [36mThen [0m[36mI should be redirected to the landing page[0m
+
+    Examples: 
+
+  @Login @Regression
+  Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:14[0m
+    [33mGiven [0m[33mI open the page[0m
+    [33mWhen [0m[33mI click on Login after keyin sample and sample123[0m
+    [33mThen [0m[33mI should be redirected to the landing page[0m
+
+  @Regression @Smoke
+  Scenario Outline: The user should not be able to login with a invalid login details [90m# src/test/resources/login.feature:20[0m
+    [36mGiven [0m[36mI open the page[0m
+    [36mWhen [0m[36mI click on Login after keyin incorrect <UserName> and <Password>[0m
+    [36mThen [0m[36mI should be displayed with an error message[0m
+
+    Examples: 
+
+  @Login @Smoke @Regression
+  Scenario Outline: The user should not be able to login with a invalid login details [90m# src/test/resources/login.feature:27[0m
+    [33mGiven [0m[33mI open the page[0m
+    [33mWhen [0m[33mI click on Login after keyin incorrect sample and sample12[0m
+    [33mThen [0m[33mI should be displayed with an error message[0m
