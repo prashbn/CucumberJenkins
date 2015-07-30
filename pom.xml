@@ -60,5 +60,10 @@
 </plugins>
 </build>
 
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>      
+    <jenkins.buildNumber>${env.BUILD_NUMBER}</jenkins.buildNumber>      
+</properties>
+
 
 </project>
