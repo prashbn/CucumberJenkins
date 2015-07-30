@@ -37,13 +37,13 @@ public class UpdateVansahTestStatus {
 		
 		VANSHA_CASE= testcaseID;
 		if(testStatus.equalsIgnoreCase("pass"))
-			VANSHA_RESULT ="0";
-		else if(testStatus.equalsIgnoreCase("fail"))
 			VANSHA_RESULT ="1";
+		else if(testStatus.equalsIgnoreCase("fail"))
+			VANSHA_RESULT ="2";
 		VANSHA_COMMENT=testComment.replace(" ", "%20");
 			
 		
-			String URI = "https://testpoint.vansah.net/atsi/save_to_testlog.php?PACKAGE="+VANSHA_PACKAGE+"&CASE="+VANSHA_CASE+"&TYPE="+VANSHA_TYPE+
+			String URI = "https://testpoint.vansah.net/atsi/save_to_testlog.php?&PACKAGE="+VANSHA_PACKAGE+"&CASE="+VANSHA_CASE+"&TYPE="+VANSHA_TYPE+
 					"&RELEASE="+VANSHA_RELEASE+"&BUILD="+VANSHA_BUILD+"&ENVIRONMENT="+VANSHA_ENVIRONMENT+"&RESULT="+VANSHA_RESULT+"&COMMENT="+VANSHA_COMMENT+"&AGENT="+VANSHA_AGENT+"&TOKEN="+VANSHA_TOKEN;
 			System.out.println(" URI is :"+  URI);
 	        HttpURLConnection urlConnection;
