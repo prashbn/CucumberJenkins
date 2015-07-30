@@ -52,8 +52,8 @@ public class UpdateVansahTestStatus {
 	            urlConnection = (HttpURLConnection) ((new URL(URI).openConnection()));
 	            urlConnection.setRequestMethod("GET");
 	            urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
-	            urlConnection.setRequestProperty("api_key", "27a309cb-4559-40d6-8052-6b7d1b672972");
 	            int responseCode = urlConnection.getResponseCode();
+	            System.out.println(" Response Code is "+ responseCode);
 	        
 	            BufferedReader in = new BufferedReader(
 	                    new InputStreamReader(urlConnection.getInputStream()));
