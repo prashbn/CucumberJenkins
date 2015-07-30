@@ -37,9 +37,9 @@ public class UpdateVansahTestStatus {
 		
 		VANSHA_CASE= testcaseID;
 		if(testStatus.equalsIgnoreCase("pass"))
-			VANSHA_RESULT ="1";
-		else if(testStatus.equalsIgnoreCase("fail"))
 			VANSHA_RESULT ="0";
+		else if(testStatus.equalsIgnoreCase("fail"))
+			VANSHA_RESULT ="1";
 		VANSHA_COMMENT=testComment.replace(" ", "%20");
 			
 		
