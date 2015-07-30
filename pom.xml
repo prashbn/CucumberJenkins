@@ -50,15 +50,10 @@
      <version>2.12.4</version>
    <configuration>
        <environmentVariables>
-       
-			
-			
            <jenkins.package>${env.VANSAH_PACKAGE}</jenkins.package>
-             <jenkins.release>${env.VANSAH_RELEASE}</jenkins.release>
-              <jenkins.release>${env.VANSAH_BUILD}</jenkins.release>
-               <jenkins.environment>${env.VANSAH_ENVIRONMENT}</jenkins.environment>
-  
-       
+           <jenkins.release>${VANSAH_RELEASE}</jenkins.release>
+           <jenkins.release>${env.VANSAH_BUILD}</jenkins.release>
+            <jenkins.environment>${env.VANSAH_ENVIRONMENT}</jenkins.environment>
        </environmentVariables>
    </configuration>
 </plugin>
