@@ -12,19 +12,6 @@ Scenario Outline: The user should be able to login with a valid
       
 Examples:
 |TestCaseID||UserName||Password|
-|261     ||sample||sample123|
+|257     ||sample||sample123|
 
  
-
-
-@Regression @Smoke
-Scenario Outline: The user should be able to login with a valid 
-    Given <TestCaseID> I open the page
-      When I click on Login after keyin <UserName> and <Password>
-      Then I should be redirected to the landing page 
-      Then Update results in vansha
-    
-      
-Examples:
-|TestCaseID||UserName||Password|
-|262     ||sample||sample123|
