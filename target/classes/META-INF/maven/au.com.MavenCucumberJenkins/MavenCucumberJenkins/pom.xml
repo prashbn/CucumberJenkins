@@ -48,22 +48,18 @@
    <groupId>org.apache.maven.plugins</groupId>
    <artifactId>maven-surefire-plugin</artifactId>
    <configuration>
-       <environmentVariables>
+       <systemPropertyVariables>               
            <jenkins.package>${env.VANSAH_PACKAGE}</jenkins.package>
            <jenkins.release>${env.VANSAH_RELEASE}</jenkins.release>
-           <jenkins.release>${env.VANSAH_BUILD}</jenkins.release>
+           <jenkins.build>${env.VANSAH_BUILD}</jenkins.build>
             <jenkins.environment>${env.VANSAH_ENVIRONMENT}</jenkins.environment>
-             <jenkins.buildUrl>${env.BUILD_URL}</jenkins.buildUrl>
-       </environmentVariables>
+   </systemPropertyVariables>
    </configuration>
 </plugin>
 </plugins>
 </build>
 
-<properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>      
-    <jenkins.buildNumber>${env.BUILD_NUMBER}</jenkins.buildNumber>      
-</properties>
+
 
 
 </project>
