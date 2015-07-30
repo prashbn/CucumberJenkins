@@ -28,7 +28,7 @@ formatter.scenarioOutline({
 });
 formatter.step({
   "line": 7,
-  "name": "I open the page",
+  "name": "\u003cTestCaseID\u003e I open the page",
   "keyword": "Given "
 });
 formatter.step({
@@ -41,8 +41,13 @@ formatter.step({
   "name": "I should be redirected to the landing page",
   "keyword": "Then "
 });
+formatter.step({
+  "line": 10,
+  "name": "Update results in vansha",
+  "keyword": "Then "
+});
 formatter.examples({
-  "line": 12,
+  "line": 13,
   "name": "",
   "description": "",
   "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;",
@@ -55,25 +60,25 @@ formatter.examples({
         "",
         "Password"
       ],
-      "line": 13,
+      "line": 14,
       "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;1"
     },
     {
       "cells": [
-        "TC001",
+        "261",
         "",
         "sample",
         "",
         "sample123"
       ],
-      "line": 14,
+      "line": 15,
       "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 14,
+  "line": 15,
   "name": "The user should be able to login with a valid",
   "description": "",
   "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;2",
@@ -92,7 +97,10 @@ formatter.scenario({
 });
 formatter.step({
   "line": 7,
-  "name": "I open the page",
+  "name": "261 I open the page",
+  "matchedColumns": [
+    0
+  ],
   "keyword": "Given "
 });
 formatter.step({
@@ -109,56 +117,94 @@ formatter.step({
   "name": "I should be redirected to the landing page",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.step({
+  "line": 10,
+  "name": "Update results in vansha",
+  "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "arguments": [
+    {
+      "val": "261",
+      "offset": 0
+    }
+  ],
+  "location": "StepDefn.tc_I_open_the_page(int)"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 15001917783,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "123",
+      "offset": 46
+    }
+  ],
+  "location": "StepDefn.i_click_on_Login_after_keyin_sample_and_sample(int)"
+});
+formatter.result({
+  "duration": 146868,
+  "status": "passed"
+});
+formatter.match({
+  "location": "StepDefn.i_should_be_redirected_to_the_landing_page()"
+});
+formatter.result({
+  "duration": 14936,
+  "status": "passed"
+});
+formatter.match({
+  "location": "StepDefn.update_results_in_vansha()"
+});
+formatter.result({
+  "duration": 619104555,
+  "status": "passed"
 });
 formatter.scenarioOutline({
-  "line": 20,
-  "name": "The user should not be able to login with a invalid login details",
+  "line": 21,
+  "name": "The user should be able to login with a valid",
   "description": "",
-  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 19,
+      "line": 20,
       "name": "@Regression"
     },
     {
-      "line": 19,
+      "line": 20,
       "name": "@Smoke"
     }
   ]
 });
 formatter.step({
-  "line": 21,
-  "name": "I open the page",
+  "line": 22,
+  "name": "\u003cTestCaseID\u003e I open the page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 22,
-  "name": "I click on Login after keyin incorrect \u003cUserName\u003e and \u003cPassword\u003e",
+  "line": 23,
+  "name": "I click on Login after keyin \u003cUserName\u003e and \u003cPassword\u003e",
   "keyword": "When "
 });
 formatter.step({
-  "line": 23,
-  "name": "I should be displayed with an error message",
+  "line": 24,
+  "name": "I should be redirected to the landing page",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 25,
+  "name": "Update results in vansha",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 25,
+  "line": 28,
   "name": "",
   "description": "",
-  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;",
   "rows": [
     {
       "cells": [
@@ -168,28 +214,28 @@ formatter.examples({
         "",
         "Password"
       ],
-      "line": 26,
-      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;;1"
+      "line": 29,
+      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;1"
     },
     {
       "cells": [
-        "TC002",
+        "262",
         "",
         "sample",
         "",
-        "sample12"
+        "sample123"
       ],
-      "line": 27,
-      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;;2"
+      "line": 30,
+      "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 27,
-  "name": "The user should not be able to login with a invalid login details",
+  "line": 30,
+  "name": "The user should be able to login with a valid",
   "description": "",
-  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-not-be-able-to-login-with-a-invalid-login-details;;2",
+  "id": "the-user-should-be-able-to-login--and-the-screen-must-request-for-a-username-and-password;the-user-should-be-able-to-login-with-a-valid;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -198,23 +244,26 @@ formatter.scenario({
       "name": "@Login"
     },
     {
-      "line": 19,
+      "line": 20,
       "name": "@Smoke"
     },
     {
-      "line": 19,
+      "line": 20,
       "name": "@Regression"
     }
   ]
 });
 formatter.step({
-  "line": 21,
-  "name": "I open the page",
+  "line": 22,
+  "name": "262 I open the page",
+  "matchedColumns": [
+    0
+  ],
   "keyword": "Given "
 });
 formatter.step({
-  "line": 22,
-  "name": "I click on Login after keyin incorrect sample and sample12",
+  "line": 23,
+  "name": "I click on Login after keyin sample and sample123",
   "matchedColumns": [
     2,
     4
@@ -222,20 +271,21 @@ formatter.step({
   "keyword": "When "
 });
 formatter.step({
-  "line": 23,
-  "name": "I should be displayed with an error message",
+  "line": 24,
+  "name": "I should be redirected to the landing page",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.step({
+  "line": 25,
+  "name": "Update results in vansha",
+  "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
+formatter.match({
+  "arguments": [
+    {
+      "val": "262",
+      "offset": 0
+    }
+  ],
+  "location": "StepDefn.tc_I_open_the_page(int)"
 });

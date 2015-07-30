@@ -3,28 +3,25 @@ Feature: The user should be able to login  and the screen must request for a use
 
   @Regression
   Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:6[0m
-    [36mGiven [0m[36mI open the page[0m
+    [36mGiven [0m[36m<TestCaseID> I open the page[0m
     [36mWhen [0m[36mI click on Login after keyin <UserName> and <Password>[0m
     [36mThen [0m[36mI should be redirected to the landing page[0m
+    [36mThen [0m[36mUpdate results in vansha[0m
 
     Examples: 
 
   @Login @Regression
-  Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:14[0m
-    [33mGiven [0m[33mI open the page[0m
-    [33mWhen [0m[33mI click on Login after keyin sample and sample123[0m
-    [33mThen [0m[33mI should be redirected to the landing page[0m
+  Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:15[0m
+    [32mGiven [0m[32m[0m[32m[1m261[0m[32m I open the page[0m                                     [90m# StepDefn.tc_I_open_the_page(int)[0m
+    [32mWhen [0m[32mI click on Login after keyin sample and sample[0m[32m[1m123[0m        [90m# StepDefn.i_click_on_Login_after_keyin_sample_and_sample(int)[0m
+    [32mThen [0m[32mI should be redirected to the landing page[0m               [90m# StepDefn.i_should_be_redirected_to_the_landing_page()[0m
+    [32mThen [0m[32mUpdate results in vansha[0m                                 [90m# StepDefn.update_results_in_vansha()[0m
 
   @Regression @Smoke
-  Scenario Outline: The user should not be able to login with a invalid login details [90m# src/test/resources/login.feature:20[0m
-    [36mGiven [0m[36mI open the page[0m
-    [36mWhen [0m[36mI click on Login after keyin incorrect <UserName> and <Password>[0m
-    [36mThen [0m[36mI should be displayed with an error message[0m
+  Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:21[0m
+    [36mGiven [0m[36m<TestCaseID> I open the page[0m
+    [36mWhen [0m[36mI click on Login after keyin <UserName> and <Password>[0m
+    [36mThen [0m[36mI should be redirected to the landing page[0m
+    [36mThen [0m[36mUpdate results in vansha[0m
 
     Examples: 
-
-  @Login @Smoke @Regression
-  Scenario Outline: The user should not be able to login with a invalid login details [90m# src/test/resources/login.feature:27[0m
-    [33mGiven [0m[33mI open the page[0m
-    [33mWhen [0m[33mI click on Login after keyin incorrect sample and sample12[0m
-    [33mThen [0m[33mI should be displayed with an error message[0m

@@ -13,7 +13,7 @@ strict = true
 public class TestMaster
 {
 
-			
+		/*	
 			private IntializeVansah initalizeVANSAH = IntializeVansah.getInstance( );
 			private String VANSAH_PACKAGE=System.getProperty("jenkins.package");
 			private String VANSAH_TYPE="2";
@@ -41,5 +41,5 @@ public class TestMaster
 				initalizeVANSAH.setToken(VANSAH_TOKEN);
 
 			}
-			
+			*/
 }
