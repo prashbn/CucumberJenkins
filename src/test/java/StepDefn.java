@@ -52,6 +52,7 @@ public class StepDefn {
 		 String VANSAH_RELEASE=System.getProperty("jenkins.release");
 		 String VANSAH_BUILD=System.getProperty("jenkins.build");
 		 String VANSAH_ENVIRONMENT=System.getProperty("jenkins.environment");	
+		 String JENKINS_BUILD_URL = System.getProperty("jenkins.buildUrl");
 		 String VANSAH_AGENT="AGENT2";
 		 String VANSAH_TOKEN="FLEXATSI15";
 	    
