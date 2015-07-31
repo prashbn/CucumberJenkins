@@ -27,6 +27,8 @@ public class StepDefn {
     
     private void setup() {
     	
+    	System.out.println("Jenkins trigger");
+    	
     	
 		// TODO Auto-generated method stub
     	IntializeDriver id= new IntializeDriver();
