@@ -27,7 +27,7 @@ public class StepDefn {
     
     private void setup() {
     	
-    	System.out.println("Jenkins trigger");
+    	System.out.println("Jenkins trigger1");
     	
     	
 		// TODO Auto-generated method stub
