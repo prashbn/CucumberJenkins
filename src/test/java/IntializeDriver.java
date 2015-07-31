@@ -39,19 +39,17 @@ public class IntializeDriver {
 	try{
 
 		driver = new FirefoxDriver();
-	
-		}
-	catch(WebDriverException e)
-	{
-		System.out.println("Web Driver Intialization Failed");
-	}
-
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		Capabilities capObj = ((RemoteWebDriver) driver).getCapabilities();
 		System.out.println(" Browser Name is :" +capObj.getBrowserName());
 		System.out.println("Browswe Version is :"+capObj.getVersion());
 		driver.get(baseURL);
-		return driver;
+	}
+	catch(WebDriverException e)
+	{
+		System.out.println("Web Driver Intialization Failed");
+	}
+	return driver;
 	}
 
 	

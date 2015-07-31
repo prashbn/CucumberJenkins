@@ -9,19 +9,3 @@ Feature: The user should be able to login  and the screen must request for a use
     [36mThen [0m[36mUpdate results in vansha[0m
 
     Examples: 
-
-  @Login @Regression
-  Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:15[0m
-    [32mGiven [0m[32m[0m[32m[1m261[0m[32m I open the page[0m                                     [90m# StepDefn.tc_I_open_the_page(int)[0m
-    [32mWhen [0m[32mI click on Login after keyin sample and sample[0m[32m[1m123[0m        [90m# StepDefn.i_click_on_Login_after_keyin_sample_and_sample(int)[0m
-    [32mThen [0m[32mI should be redirected to the landing page[0m               [90m# StepDefn.i_should_be_redirected_to_the_landing_page()[0m
-    [32mThen [0m[32mUpdate results in vansha[0m                                 [90m# StepDefn.update_results_in_vansha()[0m
-
-  @Regression @Smoke
-  Scenario Outline: The user should be able to login with a valid [90m# src/test/resources/login.feature:21[0m
-    [36mGiven [0m[36m<TestCaseID> I open the page[0m
-    [36mWhen [0m[36mI click on Login after keyin <UserName> and <Password>[0m
-    [36mThen [0m[36mI should be redirected to the landing page[0m
-    [36mThen [0m[36mUpdate results in vansha[0m
-
-    Examples: 
