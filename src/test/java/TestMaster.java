@@ -5,7 +5,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-features ={"src/test/resources/login.feature"},
+features ={"src/test/features"},
 plugin = {"html:target/cucumber-html-report", "pretty:target/cucumber-json-report.json"},
 strict = true
 )
@@ -13,7 +13,6 @@ strict = true
 public class TestMaster
 {
 
-
-	
+ 
 			
 }

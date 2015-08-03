@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import PageObjects.LoginPage;
 import ReusableComponents.IntializeDriver;
 import ReusableComponents.VansahInterface;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,24 +18,7 @@ public class StepDefn {
     private WebDriver driver;
     VansahInterface vansahinterface;
     
-
-    private void setup() {
-
-		// TODO Auto-generated method stub
-    	IntializeDriver intializedriver= new IntializeDriver();
-   
-    	
-    	try 
-    	{
-			driver = intializedriver.setUp();
-			
-		} 
-    	catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
-	}
+ 
 
 	
 	public void IntializeVansha()
@@ -55,6 +39,26 @@ public class StepDefn {
 		vansahinterface = VansahInterface.getInstance(VANSAH_URI,VANSAH_PACKAGE,VANSAH_TYPE,VANSAH_RELEASE,VANSAH_BUILD,VANSAH_ENVIRONMENT,VANSAH_AGENT,VANSAH_TOKEN,PROXY_SERVER,PROXY_PORT); 
 
 	}
+	
+	    @Before(value="@Regression")
+	    public void beforeScenario() {
+
+			// TODO Auto-generated method stub
+	    	System.out.println("Before Regression");
+	    	IntializeDriver intializedriver= new IntializeDriver();
+	   
+	    	
+	    	try 
+	    	{
+				driver = intializedriver.setUp();
+				
+			} 
+	    	catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		}
 
 
     
@@ -64,7 +68,7 @@ public class StepDefn {
     	 testCaseId= Integer.toString(arg1);
     	 
     	 System.out.println("Test case id :"+testCaseId );
-     	setup();
+     //	setup();
     }
     
 

@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("login.feature");
 formatter.feature({
   "line": 2,
   "name": "The user should be able to login  and the screen must request for a username and password",
@@ -77,6 +77,10 @@ formatter.examples({
   ],
   "keyword": "Examples"
 });
+formatter.before({
+  "duration": 2193727631,
+  "status": "passed"
+});
 formatter.scenario({
   "line": 15,
   "name": "The user should be able to login with a valid",
@@ -130,4 +134,35 @@ formatter.match({
     }
   ],
   "location": "StepDefn.tc_I_open_the_page(int)"
+});
+formatter.result({
+  "duration": 298857735,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "123",
+      "offset": 46
+    }
+  ],
+  "location": "StepDefn.i_click_on_Login_after_keyin_sample_and_sample(int)"
+});
+formatter.result({
+  "duration": 34680084,
+  "error_message": "java.lang.NullPointerException\r\n\tat PageObjects.LoginPage.txtbx_UserName(LoginPage.java:13)\r\n\tat StepDefn.i_click_on_Login_after_keyin_sample_and_sample(StepDefn.java:81)\r\n\tat ✽.When I click on Login after keyin sample and sample123(login.feature:8)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "location": "StepDefn.i_should_be_redirected_to_the_landing_page()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "StepDefn.update_results_in_vansha()"
+});
+formatter.result({
+  "status": "skipped"
+});
 });
