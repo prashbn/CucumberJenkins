@@ -227,6 +227,23 @@ public class VansahInterface {
 		if(!PROXY_SERVER.isEmpty() && PROXY_PORT!=0 )
 		proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(PROXY_SERVER, PROXY_PORT));
 		
+		/*System.setProperty("http.proxyHost", "host");
+		System.setProperty("http.proxyPort", "port_number");
+		//If proxy requires authentication,
+
+		System.setProperty("http.proxyUser", "user");
+		System.setProperty("http.proxyPassword", "password");*/
+		
+		
+		/*   Authenticator authenticator = new Authenticator() {
+
+		        public PasswordAuthentication getPasswordAuthentication() {
+		            return (new PasswordAuthentication("user",
+		                    "password".toCharArray()));
+		        }
+		    };
+		    Authenticator.setDefault(authenticator);*/
+		
 		VANSAH_CASE= testcaseID;
 		if(resultStatus.equalsIgnoreCase("pass"))
 			VANSAH_RESULT ="1";
