@@ -1,12 +1,10 @@
 package ReusableComponents;
-import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.gargoylesoftware.htmlunit.WebClient;
@@ -19,20 +17,12 @@ public class IntializeDriver {
 	WebClient wclient=new WebClient();
 	String baseURL="http://www.testpoint.com.au/";
 	
-	IntializeDriver initializedriver = null;
-	protected IntializeDriver()
+	static IntializeDriver initializedriver = null;
+	public IntializeDriver()
 	{
 		
 	}
 	
-	public IntializeDriver getInstance()
-	{
-		if(initializedriver==null)
-		{
-			initializedriver= new IntializeDriver();
-		}
-		return initializedriver;
-	}
 
 
 	public WebDriver setUp() throws Exception {
