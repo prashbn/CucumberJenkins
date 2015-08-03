@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.URL;
 import java.util.List;
 
@@ -20,8 +22,11 @@ public class VansahInterface {
 	private  String VANSAH_COMMENT;
 	private  String VANSAH_AGENT;
 	private  String VANSAH_TOKEN;
+	private  String PROXY_SERVER;
+	private  int PROXY_PORT=0;
 	private int HTTPS_RESPONSE_CODE;
 	private String  HTTPS_RESULT;
+	private Proxy proxy;
 	
 	static VansahInterface vansahinterface=null;
 	
@@ -58,6 +63,35 @@ public class VansahInterface {
 		VANSAH_TOKEN=token;	
 	}
 	
+	 /**
+
+	 * Singleton overloaded constructor
+	 * @param clientName String value
+	 * @param packageName String value
+	 * @param type String value
+	 * @param release String value
+	 * @param build String value
+	 * @param environment String value
+	 * @param agent String value
+	 * @param token String value
+	 * @param proxy_address String value
+	 * @param proxy_port String value
+	 */
+	
+	protected VansahInterface(String clientName, String packageName,String type,String release,String build,String environment, String agent, String token,String proxy_address,int port_number)
+	{
+		VANSAH_URI=clientName;
+		VANSAH_PACKAGE= packageName;
+		VANSAH_TYPE=type;
+		VANSAH_RELEASE=release;
+		VANSAH_BUILD=build;
+		VANSAH_ENVIRONMENT=environment;
+		VANSAH_AGENT=agent;
+		VANSAH_TOKEN=token;	
+		PROXY_SERVER=proxy_address;
+		PROXY_PORT=port_number;
+	}
+	
 		/**
 		 * Method to get singelton Instance of VansahInterface Object
 		 * @param clientName String value
@@ -81,6 +115,35 @@ public class VansahInterface {
 		return vansahinterface;
 		
 	}
+	
+	
+	/**
+	 * Method to get singelton Instance of VansahInterface Object
+	 * @param clientName String value
+	 * @param packageName String value
+	 * @param type String value
+	 * @param release String value
+	 * @param build String value
+	 * @param environment String value
+	 * @param agent String value
+	 * @param token String value
+	 * @param proxy_address String value
+	 * @param proxy_port String value
+	 * @return VansahInterface object
+	 */
+	
+	public static VansahInterface getInstance(String clientName, String packageName,String type,String release,String build,String environment, String agent, String token,String proxy_address, int port_number)
+	{
+		if(vansahinterface==null)
+		{
+			
+			vansahinterface=new VansahInterface(clientName, packageName, type, release, build, environment,  agent,  token,proxy_address,port_number);
+			
+		}
+		return vansahinterface;
+		
+	}
+	
 	
 	
 	/**
@@ -161,6 +224,8 @@ public class VansahInterface {
 	public String UpdateResultsInVansah(String testcaseID, String resultStatus, String testComment)
 	{
 
+		if(!PROXY_SERVER.isEmpty() && PROXY_PORT!=0 )
+		proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(PROXY_SERVER, PROXY_PORT));
 		
 		VANSAH_CASE= testcaseID;
 		if(resultStatus.equalsIgnoreCase("pass"))
@@ -178,7 +243,10 @@ public class VansahInterface {
 	        HttpURLConnection urlConnection;
 	        try {
 	            //https get method with required parameters
-	            urlConnection = (HttpURLConnection) ((new URL(URI).openConnection()));
+	        	if(!PROXY_SERVER.isEmpty() && PROXY_PORT!=0 )
+	        		urlConnection = (HttpURLConnection) ((new URL(URI).openConnection(proxy)));
+	        	else
+	        		  urlConnection = (HttpURLConnection) ((new URL(URI).openConnection()));
 	            urlConnection.setRequestMethod("GET");
 	           // urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
 	            HTTPS_RESPONSE_CODE = urlConnection.getResponseCode();
