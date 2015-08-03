@@ -41,7 +41,7 @@ public class StepDefn {
 	}
 	
 	    @Before(value="@Regression")
-	    public void beforeScenario() {
+	    public void setUp() {
 
 			// TODO Auto-generated method stub
 	    	System.out.println("Before Regression");
@@ -57,6 +57,7 @@ public class StepDefn {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+	    	IntializeVansha();
 		
 		}
 
@@ -68,7 +69,7 @@ public class StepDefn {
     	 testCaseId= Integer.toString(arg1);
     	 
     	 System.out.println("Test case id :"+testCaseId );
-     //	setup();
+  
     }
     
 
