@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 
 import PageObjects.LoginPage;
 import ReusableComponents.IntializeDriver;
+import ReusableComponents.SharedComponents;
+import ReusableComponents.SharedLibrary;
 import ReusableComponents.VansahInterface;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -11,58 +13,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import static org.junit.Assert.*;
 
-public class StepDefn {
+public class StepDefn  {
 	
-	private List<String> inputs;
-    private String testCaseId;
-    private WebDriver driver;
-    VansahInterface vansahinterface;
-    
- 
+	VansahInterface vansahinterface = VansahInterface.getInstance();
 
-	
-	public void IntializeVansha()
-
-	{
-		 String VANSAH_URI="";
-		 String VANSAH_PACKAGE=System.getProperty("jenkins.package");
-		 String VANSAH_TYPE="2";
-		 String VANSAH_RELEASE=System.getProperty("jenkins.release");
-		 String VANSAH_BUILD=System.getProperty("jenkins.build");
-		 String VANSAH_ENVIRONMENT=System.getProperty("jenkins.environment");	
-		 String JENKINS_BUILD_URL = System.getProperty("jenkins.buildUrl");
-		 String VANSAH_AGENT="AGENT2";
-		 String VANSAH_TOKEN="FLEXATSI15";	
-		 String PROXY_SERVER="";
-		 int PROXY_PORT=0;
-		 
-		vansahinterface = VansahInterface.getInstance(VANSAH_URI,VANSAH_PACKAGE,VANSAH_TYPE,VANSAH_RELEASE,VANSAH_BUILD,VANSAH_ENVIRONMENT,VANSAH_AGENT,VANSAH_TOKEN,PROXY_SERVER,PROXY_PORT); 
-
-	}
-	
-	    @Before(value="@Regression")
-	    public void setUp() {
-
-			// TODO Auto-generated method stub
-	    	System.out.println("Before Regression");
-	    	IntializeDriver intializedriver= new IntializeDriver();
-	   
-	    	
-	    	try 
-	    	{
-				driver = intializedriver.setUp();
-				
-			} 
-	    	catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    	IntializeVansha();
-		
-		}
+	private String testCaseId;
 
 
-    
     @Given("^(\\d+) I open the page$")
     public void tc_I_open_the_page(int arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
@@ -72,18 +29,14 @@ public class StepDefn {
   
     }
     
-
-    
-
-
 	@When("^I click on Login after keyin sample and sample(\\d+)$")
     public void i_click_on_Login_after_keyin_sample_and_sample(int arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-		 LoginPage.txtbx_UserName(driver).sendKeys("testuser_1");
+		 LoginPage.txtbx_UserName().sendKeys("testuser_1");
 		 
-		 LoginPage.txtbx_Password(driver).sendKeys("Test@123");
+		// LoginPage.txtbx_Password().sendKeys("Test@123");
 	 
-		 LoginPage.btn_LogIn(driver).click();
+		 //ssLoginPage.btn_LogIn().click();
 		
        
     }

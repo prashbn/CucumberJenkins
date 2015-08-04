@@ -4,30 +4,33 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import ReusableComponents.ObjectActions;
+
 public class LoginPage {
 	
+
 	 private static WebElement element = null;
 	 
-	    public static WebElement txtbx_UserName(WebDriver driver){
+	    public static WebElement txtbx_UserName(){
 	 
-	         element = driver.findElement(By.id("log"));
-	 
-	         return element;
-	 
-	         }
-	 
-	     public static WebElement txtbx_Password(WebDriver driver){
-	 
-	         element = driver.findElement(By.id("pwd"));
+	         element = ObjectActions.findElementById("Email");
 	 
 	         return element;
 	 
 	         }
 	 
-	     public static WebElement btn_LogIn(WebDriver driver){
+	     public static WebElement txtbx_Password(){
 	 
-	         element = driver.findElement(By.id("login"));
+	    	 element = ObjectActions.findElementById("password");
+	    	 
+	         return element;
 	 
+	         }
+	 
+	     public static WebElement btn_LogIn(){
+	 
+	    	 element = ObjectActions.findElementById("click");
+	    	 
 	         return element;
 	 
 	         }

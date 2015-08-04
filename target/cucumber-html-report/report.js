@@ -78,7 +78,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 2193727631,
+  "duration": 19589117168,
   "status": "passed"
 });
 formatter.scenario({
@@ -136,7 +136,7 @@ formatter.match({
   "location": "StepDefn.tc_I_open_the_page(int)"
 });
 formatter.result({
-  "duration": 298857735,
+  "duration": 260202950,
   "status": "passed"
 });
 formatter.match({
@@ -149,8 +149,8 @@ formatter.match({
   "location": "StepDefn.i_click_on_Login_after_keyin_sample_and_sample(int)"
 });
 formatter.result({
-  "duration": 34680084,
-  "error_message": "java.lang.NullPointerException\r\n\tat PageObjects.LoginPage.txtbx_UserName(LoginPage.java:13)\r\n\tat StepDefn.i_click_on_Login_after_keyin_sample_and_sample(StepDefn.java:81)\r\n\tat ✽.When I click on Login after keyin sample and sample123(login.feature:8)\r\n",
+  "duration": 49813246,
+  "error_message": "java.lang.NullPointerException\r\n\tat ReusableComponents.ObjectActions.findElementById(ObjectActions.java:66)\r\n\tat PageObjects.LoginPage.txtbx_UserName(LoginPage.java:16)\r\n\tat StepDefn.i_click_on_Login_after_keyin_sample_and_sample(StepDefn.java:35)\r\n\tat ✽.When I click on Login after keyin sample and sample123(login.feature:8)\r\n",
   "status": "failed"
 });
 formatter.match({

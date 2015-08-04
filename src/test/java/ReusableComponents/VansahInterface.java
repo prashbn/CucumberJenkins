@@ -145,6 +145,14 @@ public class VansahInterface {
 		
 	}
 	
+	public static VansahInterface getInstance()
+	{
+	
+		return vansahinterface;
+		
+	}
+	
+	
 	
 	
 	/**
